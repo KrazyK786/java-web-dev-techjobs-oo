@@ -1,5 +1,8 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Job {
 
     private int id;
@@ -93,5 +96,47 @@ public class Job {
     }
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        if (this.name == null){
+            return "OOPS! This job does not seem to exist.";
+        }
+
+        String aName = name;
+        String aEmployer = employer.getValue();
+        String aLocation = location.getValue();
+        String aPositionType = positionType.getValue();
+        String aCoreCompetency = coreCompetency.getValue();
+
+        if (aName.equals("")){
+            aName = "Data not available";
+        }
+
+        if (aEmployer.equals("")){
+            aEmployer = "Data not available";
+        }
+
+        if (aLocation.equals("")){
+            aLocation = "Data not available";
+        }
+
+        if (aPositionType.equals("")){
+            aPositionType = "Data not available";
+        }
+
+        if (aCoreCompetency.equals("")){
+            aCoreCompetency = "Data not available";
+        }
+
+        return  "\n" +
+                "ID: " + id + "\n"+
+                "Name: " + aName + "\n"+
+                "Employer: " + aEmployer + "\n"+
+                "Location: " + aLocation + "\n"+
+                "Position Type: " + aPositionType + "\n"+
+                "Core Competency: " + aCoreCompetency + "\n" +
+                "\n";
     }
 }
